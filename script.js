@@ -38,19 +38,19 @@ noBtn.addEventListener("mouseover", () => {
     noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
 });
 
-// yesBtn.addEventListener("mouseover", () => {
-//     const min = 80;
-//     const max = 80;
+yesBtn.addEventListener("mouseover", () => {
+    const min = 80;
+    const max = 80;
 
-//     const distance = Math.random() * (max - min) + min;
-//     const angle = Math.random() * Math.PI * 2;
+    const distance = Math.random() * (max - min) + min;
+    const angle = Math.random() * Math.PI * 2;
 
-//     const moveX = Math.cos(angle) * distance;
-//     const moveY = Math.sin(angle) * distance;
+    const moveX = Math.cos(angle) * distance;
+    const moveY = Math.sin(angle) * distance;
 
-//     yesBtn.style.transition = "transform 0.2s ease";
-//     yesBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
-// });
+    yesBtn.style.transition = "transform 0.2s ease";
+    yesBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+});
 
 // Logic to make YES btn to grow
 
@@ -97,7 +97,7 @@ noBtn.addEventListener("mouseover", () => {
 
     clickcount++;
 
-    if (clickcount === 8) {
+    if (clickcount === 6) {
 
         title.textContent = "";
 
@@ -110,3 +110,7 @@ noBtn.addEventListener("mouseover", () => {
         finalText.style.display = "block";
     }
 })
+
+
+
+

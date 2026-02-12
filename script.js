@@ -9,6 +9,8 @@ const catImg = document.getElementById("letter-cat");
 const buttons = document.getElementById("letter-buttons");
 const finalText = document.getElementById("final-text");
 
+let clickcount = 0;
+
 // Click Envelope
 
 envelope.addEventListener("click", () => {
@@ -27,7 +29,7 @@ noBtn.addEventListener("mouseover", () => {
     const max = 80;
 
     const distance = Math.random() * (max - min) + min;
-    const angle = Math.random() * Math.PI * 6;
+    const angle = Math.random() * Math.PI * 2;
 
     const moveX = Math.cos(angle) * distance;
     const moveY = Math.sin(angle) * distance;
@@ -36,19 +38,19 @@ noBtn.addEventListener("mouseover", () => {
     noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
 });
 
-yesBtn.addEventListener("mouseover", () => {
-    const min = 80;
-    const max = 80;
+// yesBtn.addEventListener("mouseover", () => {
+//     const min = 80;
+//     const max = 80;
 
-    const distance = Math.random() * (max - min) + min;
-    const angle = Math.random() * Math.PI * 2;
+//     const distance = Math.random() * (max - min) + min;
+//     const angle = Math.random() * Math.PI * 2;
 
-    const moveX = Math.cos(angle) * distance;
-    const moveY = Math.sin(angle) * distance;
+//     const moveX = Math.cos(angle) * distance;
+//     const moveY = Math.sin(angle) * distance;
 
-    yesBtn.style.transition = "transform 0.2s ease";
-    yesBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
-});
+//     yesBtn.style.transition = "transform 0.2s ease";
+//     yesBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+// });
 
 // Logic to make YES btn to grow
 
@@ -72,15 +74,39 @@ yesBtn.addEventListener("mouseover", () => {
 // });
 
 // YES is clicked
+// clickcount++;
 
-yesBtn.addEventListener("click", () => {
-    title.textContent = "";
+// if (clickcount === 8)
+     
+// yesBtn.addEventListener("click", () => {
+//     title.textContent = "";
 
-    catImg.src = "cat_dance.gif";
+//     catImg.src = "cat_dance.gif";
 
-    document.querySelector(".letter-window").classList.add("final");
+//     document.querySelector(".letter-window").classList.add("final");
 
-    buttons.style.display = "none";
+//     buttons.style.display = "none";
 
-    finalText.style.display = "block";
-});
+//     finalText.style.display = "block";
+    
+
+// })
+
+
+    yesBtn.addEventListener("click", () => {
+
+    clickcount++;
+
+    if (clickcount === 8) {
+
+        title.textContent = "";
+
+        catImg.src = "cat_dance.gif";
+
+        document.querySelector(".letter-window").classList.add("final");
+
+        buttons.style.display = "none";
+
+        finalText.style.display = "block";
+    }
+})
